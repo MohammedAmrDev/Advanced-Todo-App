@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Google Fonts "Noto Naskh Arabic" And "Open Sans" -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;500;600;700&family=Open+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <title>Todo App</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <!-- Side Box -->
+  <aside>
+    <h1>Todo App</h1>
+    <input type="text" id="searchForCategoryInput" class="category-searc" placeholder="Search..." autocomplete="off">
+    <!-- Category List -->
+    <ul id="categoriesList" class="categories-list no-data">
+      <span class="no-data-text dom-msg">You Have No Lists</span>
+    </ul>
+    <!-- Add Category Form -->
+    <form id="addCategoryForm" class="add-category-form">
+      <input type="text" id="addCategoryInput" placeholder="Add New List..." autocomplete="off">
+    </form>
+  </aside>
+
+  <!-- Vertical Resize -->
+  <div id="leftAsideResizeBar" class="vertical-resize-bar" data-target="--left-aside"></div>
+
+  <!-- Category Data Container -->
+  <div id="categoryDataCont" class="category-data-content no-data">
+    <!-- Upper Dividor -->
+    <div class="upper">
+      <div class="category-info">
+        <h2 id="categoryName" onfocus="this.spellcheck = true" onblur="this.spellcheck = false" contenteditable></h2>
+        <p id="categoryDateCreated"></p>
+      </div>
+      <span id="delCategory" class="del-btn" title="Delete Category"></span>
+    </div>
+    <!-- Tasks List -->
+    <ul id="tasksList" class="check-list tasks-list">
+      <span class="no-data-text dom-msg">No Data To Shown</span>
+      <span class="empty-list-text dom-msg">Empty List</span>
+    </ul>
+    <!-- Add Task Form -->
+    <form id="addTaskForm" class="add-task-form">
+      <input type="text" id="addTaskInput" placeholder="Add New Task..." autocomplete="off">
+    </form>
+  </div>
+
+  <!-- Vertical Resize -->
+  <div id="rightAsideResizeBar" class="vertical-resize-bar pointer-none" data-target="--right-aside"></div>
+
+  <!-- Task Details Side -->
+  <div id="taskDetailsSide" class="task-details-side">
+    <!-- Container -->
+    <div class="cont">
+      <div class="upper-wrapper">
+        <span id="delTaskBtn" class="del-task-btn"></span>
+        <span id="taskCreateDate" class="task-create-date"></span>
+        <span id="closeTaskDetailsSideBtn" class="close-task-details-side-btn"></span>
+      </div>
+      
+      <!-- Task Text Paragraph -->
+      <p id="taskText" class="task-text" spellcheck="true" onfocus="this.spellcheck = true" onblur="this.spellcheck = false" contenteditable></p>
+
+      <!-- Task Descirption Textarea -->
+      <div class="task-des-wrapper">
+        <textarea id="taskDes" class="task-des" placeholder="Task Descirption..." rows="17" dir="auto"></textarea>
+        <div id="markdownOutput" class="markdown-output" dir="auto"></div>
+        <span class="edit-des-btn" id="editDesBtn"></span>
+      </div>
+
+      <!-- Subtasks Box -->
+      <div class="subtasks-box" style="display: none;">
+        <!-- Subtasks List -->
+        <ul id="subtasksList" class="check-list"></ul>
+        <!-- Add Subtask Form -->
+        <form id="addSubtaskForm">
+          <span class="subtask-ico" style="--ico: url(./icons/dark/subtask-ico.svg)"></span>
+          <input type="text" id="addSubtaskInput" placeholder="Add New Subtask..." autocomplete="off">
+        </form>
+      </div>
+      <!-- Links Box -->
+      <div class="links-box">
+        <!-- Links List -->
+        <ul id="linksList"></ul>
+        <!-- Add Link Form -->
+        <form id="addAttachmentLinkForm">
+          <input type="text" id="addAttachmentLinkInput" placeholder='Website Name "Website URL"' autocomplete="off">
+        </form>
+      </div>
+    </div>
+  </div>
+  <script src="./script.js"></script>
+</body>
+</html>
